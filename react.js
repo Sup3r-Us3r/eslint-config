@@ -3,64 +3,77 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
-    jest: true,
+    jest: true
   },
   extends: [
-    "plugin:react/recommended",
-    "standard",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:prettier/recommended",
+    'plugin:react/recommended',
+    'standard',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:prettier/recommended'
   ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 12,
-    sourceType: "module",
+    sourceType: 'module'
   },
   plugins: [
-    "react",
-    "@typescript-eslint",
-    "prettier",
-    "eslint-plugin-import-helpers",
+    'react',
+    'jsx-a11y',
+    '@typescript-eslint',
+    'prettier',
+    'eslint-plugin-import-helpers'
   ],
   rules: {
-    "prettier/prettier": "error",
-    "space-before-function-paren": "off",
-    "react/prop-types": "off",
-    "react/no-children-prop": "off",
-    semi: [2, "always"],
-    "@typescript-eslint/naming-convention": [
-      "error",
+    'prettier/prettier': 'error',
+    'space-before-function-paren': 'off',
+    'react/prop-types': 'off',
+    'react/no-children-prop': 'off',
+    semi: [2, 'always'],
+    '@typescript-eslint/naming-convention': [
+      'error',
       {
-        selector: "interface",
-        format: ["PascalCase"],
+        selector: 'interface',
+        format: ['PascalCase'],
         custom: {
-          regex: "^I[A-Z]",
-          match: true,
-        },
-      },
+          regex: '^I[A-Z]',
+          match: true
+        }
+      }
     ],
-    "import-helpers/order-imports": [
-      "warn",
+    'import-helpers/order-imports': [
+      'warn',
       {
-        newlinesBetween: "always",
-        groups: ["module", "/^@/", ["parent", "sibling", "index"]],
+        newlinesBetween: 'always',
+        groups: ['module', '/^@/', ['parent', 'sibling', 'index']],
         alphabetize: {
-          order: "asc",
-          ignoreCase: true,
-        },
-      },
+          order: 'asc',
+          ignoreCase: true
+        }
+      }
     ],
+    'jsx-a11y/alt-text': [
+      'warn',
+      {
+        elements: ['img'],
+        img: ['Image']
+      }
+    ],
+    'jsx-a11y/aria-props': 'warn',
+    'jsx-a11y/aria-proptypes': 'warn',
+    'jsx-a11y/aria-unsupported-elements': 'warn',
+    'jsx-a11y/role-has-required-aria-props': 'warn',
+    'jsx-a11y/role-supports-aria-props': 'warn'
   },
   settings: {
     react: {
-      version: "detect",
+      version: 'detect'
     },
-    "import/parsers": {
-      [require.resolve("@typescript-eslint/parser")]: [".ts", ".tsx", ".d.ts"],
-    },
-  },
+    'import/parsers': {
+      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts']
+    }
+  }
 };

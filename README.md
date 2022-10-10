@@ -4,6 +4,7 @@
 
 - Standard config base
 - React plugin
+- JSX a11y plugin
 - Import helpers plugin
 - Prettier
 
