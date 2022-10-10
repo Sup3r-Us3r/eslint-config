@@ -1,4 +1,4 @@
-name: NPM Publish Package
+name: Release
 
 on:
   workflow_dispatch:
@@ -6,7 +6,8 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  build:
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
